@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Список контактов</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic" rel="stylesheet">
+    <script>
+      var deleteElem = function (elem) {
+        var tParent = document.querySelector('.saved-section');
+        var templateNewCard = document.querySelector('#newCard').content;
+
+        window.deleteData();
+        
+        elem.parentNode.remove();  
+             
+        window.contacts.splice(elem.id, 1);
+
+        contacts.sort(window.compareFunction);
+    
+        window.addData(contacts);
+
+      var stringContacts = JSON.stringify(contacts);
+      localStorage.setItem("keyContacts", stringContacts);
+
+        if (document.querySelectorAll('.elem').length === 0){
+         document.querySelector('.saved-section h1').setAttribute('hidden', 'hidden')  
+        }
+      }
+     </script>  
+  </head>
+  <body>
+    <header>
+ 
+    </header>
+    <main>
+      <section class="add">
+        <h1>Добавить контакт</h1>
+        <form class="add__form" method="get">
+            <div class="add__name">
+              <label class="add__label-name" for="add__input-name">Имя</label>
+               <input id="add__input-name" class="add__input-name" required type="text" placeholder="Введите имя" name="name"></input>
+            </div>
+            <div class="add__surname">
+             <label class="add__label-surname" for="add__input-surname">Фамилия</label>
+             <input id="add__input-surname" class="add__input-surname" required type="text" placeholder="Введите фамилию" name="surname"></input>
+            </div>
+            <div class="add__phone">
+             <label class="add__label-phone" for="add__input-phone">Телефон</label>
+             <input id="add__input-phone" class="add__input-phone" required  minlength="11" maxlength="16" placeholder="+7(" name="phone"></input>
+            </div>
+            <button class="add__button" type="button">Сохранить контакт</button>
+         </form>
+      </section>
+
+      <section class="del">
+        <button class="del__button" type="button">Очистить память</button>
+      </section>
+
+
+      <section class="saved-section" hidden>
+        <h1>Список сохраненных контактов</h1>
+      </section>
+
+    </main>
+    <footer>
+    </footer>
+   
+    <template id="newCard">
+      <section class="elem">
+        <div class="elem__init">НК</div>
+        <div class="elem__names">
+          <div class="elem__name">Никита</div>
+          <div class="elem__surname">Клепиков</div>
+          <a class="elem__phone" href="79123456789">79123456789</a>
+        </div>
+        <button class="elem__del" onclick="deleteElem(this)">Удалить контакт</button>
+      </section>  
+
+    </template>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
