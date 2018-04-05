@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: "ProximaNova", "Arial", sans-serif;
+    font-family: "PT Sans", "Arial", sans-serif;
     font-size:16px;
     line-height:26px;
     color:#333333;
@@ -17,9 +17,9 @@ body {
     padding-right:50px;
 }
 
-  .add__input-name,
-  .add__input-surname,
-  .add__input-phone {
+.add__input-name,
+.add__input-surname,
+.add__input-phone {
     background:#fbfbfb;
     border: solid 1px #e2e2e2;
     height: 53px;

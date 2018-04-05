@@ -89,20 +89,20 @@
     contacts = [];
   });
 
-var post = [];
-var postContacts = localStorage.getItem("keyContacts");
-post = JSON.parse(postContacts);
+  var post = [];
+  var postContacts = localStorage.getItem("keyContacts");
+  post = JSON.parse(postContacts);
 
 
-if (post){
-  if (post.length > 0) {
-  document.querySelector('.saved-section').removeAttribute('hidden');
-  document.querySelector('.saved-section h1').removeAttribute('hidden');
+  if (post){
+    if (post.length > 0) {
+    document.querySelector('.saved-section').removeAttribute('hidden');
+    document.querySelector('.saved-section h1').removeAttribute('hidden');
 
-  window.addData(post);
+    window.addData(post);
 
-  contacts = post;
+    contacts = post;
+    }
   }
-}
 
 })();
